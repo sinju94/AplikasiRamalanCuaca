@@ -10,55 +10,69 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:padding="16dp">
 
         <TextView
+            android:id="@+id/main_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Sunday" />
+            android:textColor="@android:color/white"
+            android:text="Sunday"
+            android:textSize="16dp"/>
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher" />
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/moderete_rain"/>
+                    <ImageView
+                        android:id="@+id/main_weather_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@mipmap/ic_launcher" />
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/main_weather_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="Moderate Rain"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/moderete_rain"/>
-
-            </LinearLayout>
-
-
+                    <TextView
+                        android:id="@+id/main_weather_temp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/white"
+                        android:gravity="center"
+                        android:textSize="60dp"
+                        android:text="17°"/>
 
 
         </LinearLayout>
-
-
     </LinearLayout>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_weather_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
